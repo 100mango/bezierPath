@@ -26,6 +26,7 @@
     self.pointArray = [NSMutableArray array];
     self.pointLayers = [NSMutableArray array];
     self.bezierLayer = [CAShapeLayer layer];
+    
     [self.view.layer addSublayer:self.bezierLayer];
 }
 
@@ -47,9 +48,10 @@
 #pragma mark - action
 - (IBAction)doneAddPoint:(id)sender
 {
-    [self drawBezierCurveInShapeLayer:self.bezierLayer withPoints:self.pointArray lineColor:[UIColor blackColor] lineWidth:2];
+    [self drawBezierCurveInShapeLayer:self.bezierLayer withPoints:self.pointArray lineColor:[UIColor blackColor] lineWidth:2 lineDashPattern:nil];
     self.bezierLayer.hidden = NO;
     
+    //draw line animation
     CABasicAnimation *draw = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     draw.duration = 4;
     draw.fromValue = @0;
@@ -82,17 +84,18 @@
     [self.pointLayers addObject:pointLayer];
 }
 
-- (void)drawBezierCurveInShapeLayer:(CAShapeLayer*)shapeLayer withPoints:(NSArray*)points lineColor:(UIColor*)color lineWidth:(CGFloat)lineWidth {
+- (void)drawBezierCurveInShapeLayer:(CAShapeLayer*)shapeLayer withPoints:(NSArray*)points lineColor:(UIColor*)color lineWidth:(CGFloat)lineWidth lineDashPattern:(NSArray*)dashPattern
+{
     if (points.count < 2) return;
     
     shapeLayer.lineWidth = lineWidth;
     shapeLayer.strokeColor = [color CGColor];
     shapeLayer.fillColor = [[UIColor clearColor] CGColor];
+    shapeLayer.lineDashPattern = dashPattern;
     
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     [bezierPath addBezierThroughPoints:points];
     
-    DLog(@"%@",bezierPath);
     shapeLayer.path = [bezierPath CGPath];
 }
 
