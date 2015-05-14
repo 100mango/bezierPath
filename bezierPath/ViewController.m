@@ -61,6 +61,8 @@
 
 - (IBAction)resetPoint:(id)sender
 {
+    //remove path
+    self.bezierLayer.path = nil;
     //remove point
     [self.pointArray removeAllObjects];
     //remove point layers
