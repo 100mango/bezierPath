@@ -49,15 +49,19 @@
 {
     [self drawBezierCurveInShapeLayer:self.bezierLayer withPoints:self.pointArray lineColor:[UIColor blackColor] lineWidth:2];
     self.bezierLayer.hidden = NO;
+    
+    CABasicAnimation *draw = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    draw.duration = 4;
+    draw.fromValue = @0;
+    draw.toValue = @1;
+    [self.bezierLayer addAnimation:draw forKey:nil];
 }
 
 - (IBAction)resetPoint:(id)sender
 {
+    //remove point
     [self.pointArray removeAllObjects];
-    /*
-    [self.pointLayers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        [(CALayer*)obj removeFromSuperlayer];
-    }];*/
+    //remove point layers
     [self.pointLayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
     [self.pointLayers removeAllObjects];
     
@@ -70,7 +74,8 @@
     CALayer * pointLayer = [CALayer layer];
     pointLayer.bounds = CGRectMake(0, 0, 6, 6);
     pointLayer.position = point;
-    pointLayer.backgroundColor = [UIColor magentaColor].CGColor;
+    pointLayer.cornerRadius = 3;
+    pointLayer.backgroundColor = [UIColor blueColor].CGColor;
     pointLayer.opaque = YES;
     [self.view.layer addSublayer:pointLayer];
     
@@ -87,6 +92,7 @@
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     [bezierPath addBezierThroughPoints:points];
     
+    DLog(@"%@",bezierPath);
     shapeLayer.path = [bezierPath CGPath];
 }
 
