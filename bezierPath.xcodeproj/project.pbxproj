@@ -16,6 +16,7 @@
 		DB001EE01B036F5E00AEB11A /* bezierPathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EDF1B036F5E00AEB11A /* bezierPathTests.m */; };
 		DB001EEB1B036FC400AEB11A /* BezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EEA1B036FC400AEB11A /* BezierView.m */; };
 		DB001EEE1B048D5400AEB11A /* NSObject+Macro.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EED1B048D5400AEB11A /* NSObject+Macro.m */; };
+		DB001EF21B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EF11B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		DB001EEA1B036FC400AEB11A /* BezierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierView.m; sourceTree = "<group>"; };
 		DB001EEC1B048D5400AEB11A /* NSObject+Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Macro.h"; path = "../NSObject+Macro.h"; sourceTree = "<group>"; };
 		DB001EED1B048D5400AEB11A /* NSObject+Macro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Macro.m"; path = "../NSObject+Macro.m"; sourceTree = "<group>"; };
+		DB001EF01B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+LxThroughPointsBezier.h"; sourceTree = "<group>"; };
+		DB001EF11B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+LxThroughPointsBezier.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 			children = (
 				DB001EEC1B048D5400AEB11A /* NSObject+Macro.h */,
 				DB001EED1B048D5400AEB11A /* NSObject+Macro.m */,
+				DB001EF01B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.h */,
+				DB001EF11B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				DB001ECC1B036F5E00AEB11A /* ViewController.m in Sources */,
 				DB001EEE1B048D5400AEB11A /* NSObject+Macro.m in Sources */,
 				DB001EC91B036F5E00AEB11A /* AppDelegate.m in Sources */,
+				DB001EF21B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.m in Sources */,
 				DB001EC61B036F5E00AEB11A /* main.m in Sources */,
 				DB001EEB1B036FC400AEB11A /* BezierView.m in Sources */,
 			);
