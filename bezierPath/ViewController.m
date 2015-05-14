@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "NSObject+Macro.h"
 
 @interface ViewController ()
+
+@property (nonatomic,strong) NSMutableArray *pointArray;
+@property (nonatomic,strong) NSMutableArray *pointLayers;
+@property (nonatomic,strong) CAShapeLayer *bezierPath;
 
 @end
 
@@ -16,11 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [NSValue valueWithCGPoint:CGPointMake(10, 10)];
     
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    [self drawBezierCurveInShapeLayer:shapeLayer withPoints:@[[NSValue valueWithCGPoint:CGPointMake(100, 100)],[NSValue valueWithCGPoint:CGPointMake(200, 200)],[NSValue valueWithCGPoint:CGPointMake(220, 250)]] lineColor:[UIColor blueColor] lineWidth:2];
-    [self.view.layer addSublayer:shapeLayer];
+    self.pointArray = [NSMutableArray array];
+    self.pointLayers = [NSMutableArray array];
+    self.bezierPath = [CAShapeLayer layer];
+    [self.view.layer addSublayer:self.bezierPath];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,16 +37,31 @@
 {
     UITouch *aTouch = [touches anyObject];
     CGPoint point = [aTouch locationInView:self.view];
-    NSLog(@"%@",NSStringFromCGPoint(point));
+    
     [self drawPoint:point];
+    [self.pointArray addObject:[NSValue valueWithCGPoint:point]];
 }
 
 
+#pragma mark - action
 - (IBAction)doneAddPoint:(id)sender
 {
-    
+    [self drawBezierCurveInShapeLayer:self.bezierPath withPoints:self.pointArray lineColor:[UIColor blackColor] lineWidth:2];
+    self.bezierPath.hidden = NO;
 }
 
+- (IBAction)resetPoint:(id)sender
+{
+    [self.pointArray removeAllObjects];
+    /*
+    [self.pointLayers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [(CALayer*)obj removeFromSuperlayer];
+    }];*/
+    [self.pointLayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
+    [self.pointLayers removeAllObjects];
+    
+    self.bezierPath.hidden = YES;
+}
 #pragma mark - draw
 
 - (void)drawPoint:(CGPoint)point
@@ -52,6 +72,8 @@
     pointLayer.backgroundColor = [UIColor magentaColor].CGColor;
     pointLayer.opaque = YES;
     [self.view.layer addSublayer:pointLayer];
+    
+    [self.pointLayers addObject:pointLayer];
 }
 
 - (void)drawBezierCurveInShapeLayer:(CAShapeLayer*)shapeLayer withPoints:(NSArray*)points lineColor:(UIColor*)color lineWidth:(CGFloat)lineWidth {

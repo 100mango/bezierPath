@@ -15,6 +15,7 @@
 		DB001ED41B036F5E00AEB11A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB001ED21B036F5E00AEB11A /* LaunchScreen.xib */; };
 		DB001EE01B036F5E00AEB11A /* bezierPathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EDF1B036F5E00AEB11A /* bezierPathTests.m */; };
 		DB001EEB1B036FC400AEB11A /* BezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EEA1B036FC400AEB11A /* BezierView.m */; };
+		DB001EEE1B048D5400AEB11A /* NSObject+Macro.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EED1B048D5400AEB11A /* NSObject+Macro.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		DB001EDF1B036F5E00AEB11A /* bezierPathTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bezierPathTests.m; sourceTree = "<group>"; };
 		DB001EE91B036FC400AEB11A /* BezierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierView.h; sourceTree = "<group>"; };
 		DB001EEA1B036FC400AEB11A /* BezierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierView.m; sourceTree = "<group>"; };
+		DB001EEC1B048D5400AEB11A /* NSObject+Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Macro.h"; path = "../NSObject+Macro.h"; sourceTree = "<group>"; };
+		DB001EED1B048D5400AEB11A /* NSObject+Macro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Macro.m"; path = "../NSObject+Macro.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 		DB001EC21B036F5E00AEB11A /* bezierPath */ = {
 			isa = PBXGroup;
 			children = (
+				DB001EEF1B048D6200AEB11A /* Tools */,
 				DB001EC71B036F5E00AEB11A /* AppDelegate.h */,
 				DB001EC81B036F5E00AEB11A /* AppDelegate.m */,
 				DB001ECA1B036F5E00AEB11A /* ViewController.h */,
@@ -122,6 +126,15 @@
 				DB001EDE1B036F5E00AEB11A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB001EEF1B048D6200AEB11A /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				DB001EEC1B048D5400AEB11A /* NSObject+Macro.h */,
+				DB001EED1B048D5400AEB11A /* NSObject+Macro.m */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB001ECC1B036F5E00AEB11A /* ViewController.m in Sources */,
+				DB001EEE1B048D5400AEB11A /* NSObject+Macro.m in Sources */,
 				DB001EC91B036F5E00AEB11A /* AppDelegate.m in Sources */,
 				DB001EC61B036F5E00AEB11A /* main.m in Sources */,
 				DB001EEB1B036FC400AEB11A /* BezierView.m in Sources */,
