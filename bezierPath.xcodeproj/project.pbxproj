@@ -14,7 +14,6 @@
 		DB001ED11B036F5E00AEB11A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB001ED01B036F5E00AEB11A /* Images.xcassets */; };
 		DB001ED41B036F5E00AEB11A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB001ED21B036F5E00AEB11A /* LaunchScreen.xib */; };
 		DB001EE01B036F5E00AEB11A /* bezierPathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EDF1B036F5E00AEB11A /* bezierPathTests.m */; };
-		DB001EEB1B036FC400AEB11A /* BezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EEA1B036FC400AEB11A /* BezierView.m */; };
 		DB001EEE1B048D5400AEB11A /* NSObject+Macro.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EED1B048D5400AEB11A /* NSObject+Macro.m */; };
 		DB001EF21B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = DB001EF11B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.m */; };
 /* End PBXBuildFile section */
@@ -43,8 +42,6 @@
 		DB001ED91B036F5E00AEB11A /* bezierPathTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bezierPathTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB001EDE1B036F5E00AEB11A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB001EDF1B036F5E00AEB11A /* bezierPathTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bezierPathTests.m; sourceTree = "<group>"; };
-		DB001EE91B036FC400AEB11A /* BezierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierView.h; sourceTree = "<group>"; };
-		DB001EEA1B036FC400AEB11A /* BezierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierView.m; sourceTree = "<group>"; };
 		DB001EEC1B048D5400AEB11A /* NSObject+Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Macro.h"; path = "../NSObject+Macro.h"; sourceTree = "<group>"; };
 		DB001EED1B048D5400AEB11A /* NSObject+Macro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Macro.m"; path = "../NSObject+Macro.m"; sourceTree = "<group>"; };
 		DB001EF01B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+LxThroughPointsBezier.h"; sourceTree = "<group>"; };
@@ -99,8 +96,6 @@
 				DB001ED01B036F5E00AEB11A /* Images.xcassets */,
 				DB001ED21B036F5E00AEB11A /* LaunchScreen.xib */,
 				DB001EC31B036F5E00AEB11A /* Supporting Files */,
-				DB001EE91B036FC400AEB11A /* BezierView.h */,
-				DB001EEA1B036FC400AEB11A /* BezierView.m */,
 			);
 			path = bezierPath;
 			sourceTree = "<group>";
@@ -247,7 +242,6 @@
 				DB001EC91B036F5E00AEB11A /* AppDelegate.m in Sources */,
 				DB001EF21B0491DF00AEB11A /* UIBezierPath+LxThroughPointsBezier.m in Sources */,
 				DB001EC61B036F5E00AEB11A /* main.m in Sources */,
-				DB001EEB1B036FC400AEB11A /* BezierView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +436,7 @@
 				DB001EE51B036F5E00AEB11A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB001EE61B036F5E00AEB11A /* Build configuration list for PBXNativeTarget "bezierPathTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +445,7 @@
 				DB001EE81B036F5E00AEB11A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
